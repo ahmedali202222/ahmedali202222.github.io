@@ -1,0 +1,624 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+body {
+    background: radial-gradient(circle at 20% 20%, #f70c0c, #111111);
+  }
+  
+/* Ensure Page is Properly Centered */
+/* Fix Body */
+body {
+    background: #1f242d;
+    color: #fff;
+    max-width: 1400px; /* Prevents page from stretching too wide */
+    margin: auto; /* Centers the page correctly */
+    padding: 0; /* Removes unnecessary space */
+}
+
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures elements respect padding/borders */
+    font-family: 'Poppins', sans-serif;
+}
+
+*::selection {
+    background: #0ef;
+    color: #1f242d;
+}
+
+body {
+    background: #1f242d;
+    color: #fff;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Logo */
+.logo {
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: .3s ease;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #0ef;
+}
+
+/* Home Section */
+
+button {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+
+
+.Home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.Home-content h3 span {
+    color: #0ef;
+}
+
+.Home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.Home-content p {
+    font-size: 16px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+/* Home Image */
+.Home-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home-img img {
+    max-width: 200px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #0ef;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation-delay: 2s, 3s;
+}
+
+/* Social Media Icons */
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.social-media a:hover {
+    background: #0ef;
+    color: #1f242d;
+    box-shadow: 0 0 20px #0ef;
+}
+
+/* Contact Button */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #0ef;
+    font-size: 16px;
+    color: #1f242d;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #1f242d;
+    box-shadow: 0 0 20px #fff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    font-size: 14px;
+}
+
+/* KEYFRAMES ANIMATION */
+@keyframes slideRight {
+    0% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideLeft {
+    0% { transform: translateX(100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideTop {
+    0% { transform: translateY(100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideBottom {
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes floatImage {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Responsive Design 
+@media (max-width: 1024px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-img img {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-img img {
+        max-width: 250px;
+    }
+
+    .social-media {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+
+/*orignal///////////////////////////////////*/
+
+/* Center About and Education Sections */
+.About,
+.Education {
+    text-align: center;
+    max-width: 800px;  /* Ensures content is not too stretched */
+    margin: 0 auto;    /* Centers the section */
+    padding: 50px 0;   /* Adds spacing for a cleaner layout */
+}
+
+/* Center the headings */
+.About h2,
+.Education h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+
+/* Ensure paragraph text is also centered */
+.About p,
+.Education p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ccc;
+}
+/* Skills Section */
+/* Skills Section */
+.Skills-container{
+    display: flex;
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+    justify-content: center; /* Centers the skill boxes */
+    gap: 20px; /* Space between items */
+}
+/* Hover Effect */
+.Skills-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.6);
+}
+/* Individual Skill Box */
+.category{
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.3);
+    width: 45%; /* Adjusts to take up half the screen */
+    min-width: 300px; /* Prevents the boxes from getting too small */
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Skill Bubbles */
+.Skill-bubble {
+    display: inline-block;
+    background: linear-gradient(135deg, #0ef, #1b87f5);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
+    transition: transform 0.3s ease;
+    margin: 5px;
+}
+
+/* Responsive - Stack on Smaller Screens */
+@media (max-width: 768px) {
+    .Skills-container:hover{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category {
+        width: 90%;
+    }
+}
+
+
+
+/* Center Contact Section */
+.contact {
+    text-align: center;
+    padding: 80px 10%;
+}
+
+.contact h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Contact Links */
+.contact a {
+    color: #0ef;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Button */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    box-shadow: 0 0 8px #0ef;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #1f242d;
+    box-shadow: 0 0 15px #fff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.9);
+    font-size: 14px;
+}
+.About, 
+.Education, 
+.Skills, 
+.contact {
+    padding: 50px 10%; /* Reduced padding */
+    max-width: 900px; /* Keeps everything aligned */
+    margin: auto; /* Centers all sections */
+}
+
+section {
+    width: 100%;
+    max-width: 1200px; /* Ensures content doesn't stretch too wide */
+    margin: auto;
+    padding: 60px 10%; /* Reduces extra spacing */
+}
+
+/* Reduce space at the top of the Home section */
+.Home {
+    padding: 80px 10% 40px; /* Reduces space at the bottom */
+}
+
+
+/* Projects Section */
+.Projects {
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 10%;
+}
+
+.Projects h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.Project-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.3);
+    margin-bottom: 20px;
+    max-width: 600px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin: 20px auto;
+}
+
+/* Hover Effect */
+.Project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.6);
+}
+
+.Project-item h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.Project-item p {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+/* Button */
+.Project-item .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0ef;
+    color: #1f242d;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.Project-item .btn:hover {
+    background: #fff;
+    color: #1f242d;
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.8);
+}
+
+
+/* Experience Section */
+/* Experience Section */
+.Experience-section {
+    text-align: center;
+    padding: 60px 10%;
+    background: #1f242d;
+    color: #fff;
+}
+
+/* Experience Title */
+.Experience-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #0ef;
+    text-align: center;
+    width: 100%;
+}
+
+/* Experience Grid */
+.Experience-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Experience Item - Matches Project Cards */
+.Experience-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.4);
+    max-width: 600px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: left;
+    margin: 20px;
+}
+
+/* Hover Effect */
+.Experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 238, 255, 0.6);
+}
+
+/* Experience Titles */
+.Experience-item h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.Experience-item h4 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ccc;
+    margin-bottom: 12px;
+}
+
+/* Experience Bullet Points */
+.Experience-item ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.Experience-item ul li {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Use a checkmark as the bullet */
+.Experience-item ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #0ef;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .Experience-item {
+        width: 90%;
+        text-align: center;
+    }
+
+    .Experience-item ul {
+        text-align: left;
+    }
+}
+
+
+/* General Styling for Section Headings */
+h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase; /* Makes it consistent with a professional look */
+    letter-spacing: 1.5px; /* Enhances readability */
+}
+
+/* Specific Styling for Experience and Projects */
+.Experience-section h2,
+.Projects h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: rgb(252, 255, 255);
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(0, 238, 255, 0.5); /* Adds a subtle glow */
+}
+
+/* Ensure spacing and alignment are consistent */
+.Experience-section, 
+.Projects {
+    padding: 50px 10%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
